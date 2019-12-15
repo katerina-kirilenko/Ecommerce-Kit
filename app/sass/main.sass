@@ -15,7 +15,47 @@ main
   .item 
     padding: $gutter
     background-color: #fff
-    text-align: center
+    position: relative
+    transition: color .5s ease
+
+h1 
+  font-family: 'PT Sans'
+  font-size: 48px
+  text-transform: uppercase
+
+h3
+  font-family: 'PT Sans'
+  font-size: 20px 
+  text-transform: uppercase
+  color: #000 
+
+p
+  font-family: 'PT Sans'
+  font-size: 14px 
+  color: #000 
+a
+  text-decoration: none
+  display: inline-block
+
+.btn
+  font-family: 'PT Sans'
+  font-weight: bold
+  font-size: 12px 
+  color: $accent
+  text-transform: uppercase
+  padding: 10px 16px
+  margin: 0 auto
+  transition: background-color .3s ease
+
+.black
+  background-color: $accent
+  &:hover
+    background-color: #000
+
+.white
+  background-color: #fff
+  &:hover
+    background-color: $btn-hover
 
 .card-promotion:nth-child(1)
   grid-column: 1 / 4
@@ -36,6 +76,42 @@ main
   grid-column: 7 / 13
   grid-row: 1 / 3
   min-height: 580px
+  text-align: center
+  align-content: center
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    background-image: url('../picture/bw-box-background.jpg')
+    background-size: cover
+    background-position: center   
+    background-color: $accent
+    filter: grayscale(100%) brightness(80%)
+    transition: filter .5s ease
+  &:hover::before
+    filter: grayscale(100%) brightness(60%)
+    cursor: pointer
+  > * 
+    z-index: 1     
+  .bw-box-content
+    position: relative    
+    color: #fff
+  h1
+    padding: 0 20px
+    border: 4px solid #fff
+    max-width: 371px
+    margin: 0 auto
+  p
+    font-size: 16px 
+    color: #fff 
+    padding: 24px 10px 12px
+  .btn
+    filter: grayscale(0%)
 
 .just-arrived
   grid-column: 1 / 7
